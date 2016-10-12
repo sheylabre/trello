@@ -19,7 +19,6 @@ body{
 	cursor: pointer;
 }
 
-
 #contenedorAgregar:hover{
 	background-color: rgba(0,0,0,.3);
 }
@@ -64,4 +63,25 @@ body{
 
 #botonEliminar:hover{
 	color: black;
+}
+
+.imprimirTitulo{
+	background-color: #E2E4E6;
+	display: block;
+	margin: 0 79% 15px 0;
+	padding: 15px 0 10px 15px;
+	border-radius: 5px 5px 0 0;
+	font-weight: bold;
+}
+
+.agregarTarjeta{
+	background-color: #E2E4E6;
+	padding: 15px 166px 10px 15px;
+	border-radius: 0 0 5px 5px;
+	color: gray;
+
+}
+
+.agregarTarjeta:hover{
+	background-color: #C8C8C8;	
 }
