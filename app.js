@@ -6,8 +6,11 @@ window.addEventListener('load', function() {
     var contenedorTitulo = document.getElementById("titulo");
     var botonguardar = document.getElementById("boton");
 
-    contenedorAgregar.addEventListener("click", contenedor);
-
+    contenedorAgregar.addEventListener("click", function(){
+        contenedor();
+        contenedorTitulo.focus();
+    });
+    //contenedorAgregar.addEventListener("click", contenedorTitulo.focus());  
 
     function contenedor(){
         contenedorAgregar.style.display = "none";
