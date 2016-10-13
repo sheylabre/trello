@@ -25,6 +25,8 @@ body{
 
 #contenedorspan{
 	margin-left: 5px;
+	display: inline-block;
+	
 }
 
 #formulario{
@@ -79,9 +81,15 @@ body{
 	padding: 15px 166px 10px 15px;
 	border-radius: 0 0 5px 5px;
 	color: gray;
+	cursor: pointer;
 
 }
 
 .agregarTarjeta:hover{
 	background-color: #C8C8C8;	
+	text-decoration:underline;
+}
+
+.contenLista{
+	display: inline-block;
 }
