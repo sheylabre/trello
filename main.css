@@ -17,6 +17,7 @@ body{
 	padding: 10px 130px 10px 10px;
 	border-radius: 5px;
 	cursor: pointer;
+	margin:0 0 0 10px;
 }
 
 #contenedorAgregar:hover{
@@ -31,11 +32,11 @@ body{
 
 #formulario{
 	padding: 6px;
-	background-color:#E2E4E6;
-	width: 20%;
+	background-color:#E2E4E6;	
+	width: 94%;
 	border-radius: 5px;
 	display: none;
-	margin-left: 5px;
+	margin-left: 8px;
 }
 
 #titulo{
@@ -70,18 +71,20 @@ body{
 .imprimirTitulo{
 	background-color: #E2E4E6;
 	display: block;
-	margin: 0 79% 15px 0;
-	padding: 15px 0 10px 15px;
+	margin: 0px 0px 0px 8px;
+	padding: 15px 0px 0px 10px;
 	border-radius: 5px 5px 0 0;
-	font-weight: bold;
+	font-weight: bold;	
+	height: 35px;
 }
 
 .agregarTarjeta{
 	background-color: #E2E4E6;
-	padding: 15px 166px 10px 15px;
+	padding: 15px 168px 10px 15px;
 	border-radius: 0 0 5px 5px;
 	color: gray;
 	cursor: pointer;
+	margin: 0 0 0 8px;
 
 }
 
@@ -90,6 +93,32 @@ body{
 	text-decoration:underline;
 }
 
+.contentxtArea{
+	padding: 0 8px 10px 8px;
+	margin:0 0 0 8px;
+	background-color: #E2E4E6;
+	border-radius: 0 0 5px 5px;
+
+}
+
 .contenLista{
 	display: inline-block;
+}
+
+.textArea{
+	overflow: hidden;
+	height: 60px;
+	border:none;
+	border-radius: 5px 5px;
+	display: block;
+}
+
+.botonGuardarTxtArea{
+	background-color: #5DB349;
+	color: white;
+	border-radius: 5px;
+	padding: 7px 20px;
+	margin: 10px 0 0;
+	font-size: 15px;
+	border:2px solid #5DB349;
 }

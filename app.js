@@ -9,8 +9,7 @@ window.addEventListener('load', function() {
     contenedorAgregar.addEventListener("click", function(){
         contenedor();
         contenedorTitulo.focus();
-    });
-    //contenedorAgregar.addEventListener("click", contenedorTitulo.focus());  
+    }); 
 
     function contenedor(){
         contenedorAgregar.style.display = "none";
@@ -18,7 +17,8 @@ window.addEventListener('load', function() {
 
         botonguardar.addEventListener("click", function(){
             formulario.style.display = "none";
-            var imprimirTitulo = document.createElement("p");
+
+            var imprimirTitulo = document.createElement("span");
             contenedorspan.appendChild(imprimirTitulo);
             imprimirTitulo.innerText = contenedorTitulo.value;
             imprimirTitulo.setAttribute("class","imprimirTitulo");
@@ -28,9 +28,31 @@ window.addEventListener('load', function() {
             agregarTarjeta.setAttribute("class","agregarTarjeta");
             agregarTarjeta.innerText = "Añadir Tarjeta...";
 
-            agregarContenedor();
-        });
 
+            agregarTarjeta.addEventListener("click", function(){
+            agregarTarjeta.style.display = "none";
+
+            var textArea = document.createElement("textarea"); 
+            textArea.setAttribute("cols","33");   
+            textArea.setAttribute("class","textArea"); 
+
+            var contentxtArea =document.createElement("div");
+            contentxtArea.classList.add("contentxtArea");
+            contenedorspan.appendChild(contentxtArea);
+            contentxtArea.appendChild(textArea);
+
+            var botonGuardarTxtArea = document.createElement("button");
+            botonGuardarTxtArea.classList.add("botonGuardarTxtArea");
+            contentxtArea.appendChild(botonGuardarTxtArea);
+            botonGuardarTxtArea.innerText = "Enviar";
+
+            
+            });
+
+  //          agregarContenedor();
+
+        });
+/*
         function agregarContenedor(){
             var contenLista = document.createElement("div");
             contenLista.classList.add("contenLista");
@@ -39,5 +61,6 @@ window.addEventListener('load', function() {
             contenLista.appendChild(formulario);
             contenedorAgregar.style.display = "block";
         }
+   */     
     };
 });
