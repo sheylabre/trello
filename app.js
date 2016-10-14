@@ -12,6 +12,7 @@ window.addEventListener('load', function() {
     }); 
 
     function contenedor(){
+      //  contenedorGeneral.appendChild(contenedorspan);
         contenedorAgregar.style.display = "none";
         formulario.style.display = "block";
 
@@ -56,21 +57,22 @@ window.addEventListener('load', function() {
 
             })
 
+            agregarContenedor();
             
             });
 
-  //          agregarContenedor();
 
         });
-/*
+
         function agregarContenedor(){
             var contenLista = document.createElement("div");
-            contenLista.classList.add("contenLista");
             contenedorGeneral.appendChild(contenLista);
+            contenLista.classList.add("contenLista");
             contenLista.appendChild(contenedorAgregar);
             contenLista.appendChild(formulario);
+            contenLista.appendChild(imprimirTitulo);
             contenedorAgregar.style.display = "block";
         }
-   */     
+     
     };
 });
