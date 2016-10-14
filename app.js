@@ -24,10 +24,9 @@ window.addEventListener('load', function() {
             imprimirTitulo.setAttribute("class","imprimirTitulo");
 
             var agregarTarjeta = document.createElement("span");
-            contenedorspan.appendChild(agregarTarjeta);
             agregarTarjeta.setAttribute("class","agregarTarjeta");
             agregarTarjeta.innerText = "Añadir Tarjeta...";
-
+            contenedorspan.appendChild(agregarTarjeta);
 
             agregarTarjeta.addEventListener("click", function(){
             agregarTarjeta.style.display = "none";
@@ -36,15 +35,26 @@ window.addEventListener('load', function() {
             textArea.setAttribute("cols","33");   
             textArea.setAttribute("class","textArea"); 
 
-            var contentxtArea =document.createElement("div");
+            var contentxtArea = document.createElement("div");
             contentxtArea.classList.add("contentxtArea");
-            contenedorspan.appendChild(contentxtArea);
             contentxtArea.appendChild(textArea);
+            contenedorspan.insertBefore(contentxtArea, agregarTarjeta);
 
             var botonGuardarTxtArea = document.createElement("button");
             botonGuardarTxtArea.classList.add("botonGuardarTxtArea");
             contentxtArea.appendChild(botonGuardarTxtArea);
             botonGuardarTxtArea.innerText = "Enviar";
+
+            botonGuardarTxtArea.addEventListener("click", function(){
+            textArea.style.display = "none";
+            botonGuardarTxtArea.style.display = "none";
+
+            var resultadoTextArea = document.createElement("span");
+            contentxtArea.appendChild(resultadoTextArea);
+            resultadoTextArea.innerText = textArea.value;
+            agregarTarjeta.style.display = "block";
+
+            })
 
             
             });
