@@ -7,27 +7,32 @@ window.addEventListener('load', function() {
     var botonguardar = document.getElementById("boton");
 
     contenedorAgregar.addEventListener("click", function(){
-        contenedor();
-        contenedorTitulo.focus();
+        gg();
     }); 
+    botonguardar.addEventListener("click", function(){
+        contenedor();
+    });
+
+    function gg(){
+        contenedorAgregar.style.display = "none";
+        formulario.style.display = "inline-block";
+        contenedorTitulo.focus();
+    }
 
     function contenedor(){
       //  contenedorGeneral.appendChild(contenedorspan);
-        contenedorAgregar.style.display = "none";
-        formulario.style.display = "block";
-
-        botonguardar.addEventListener("click", function(){
+        // botonguardar.addEventListener("click", function(){
             formulario.style.display = "none";
 
             var imprimirTitulo = document.createElement("span");
-            contenedorspan.appendChild(imprimirTitulo);
+            contenedorAgregar.parentElement.appendChild(imprimirTitulo);
             imprimirTitulo.innerText = contenedorTitulo.value;
             imprimirTitulo.setAttribute("class","imprimirTitulo");
 
             var agregarTarjeta = document.createElement("span");
             agregarTarjeta.setAttribute("class","agregarTarjeta");
             agregarTarjeta.innerText = "Añadir Tarjeta...";
-            contenedorspan.appendChild(agregarTarjeta);
+            contenedorAgregar.parentElement.appendChild(agregarTarjeta);
 
             agregarTarjeta.addEventListener("click", function(){
             agregarTarjeta.style.display = "none";
@@ -53,16 +58,15 @@ window.addEventListener('load', function() {
             var resultadoTextArea = document.createElement("span");
             contentxtArea.appendChild(resultadoTextArea);
             resultadoTextArea.innerText = textArea.value;
-            agregarTarjeta.style.display = "block";
+            agregarTarjeta.style.display = "inline-block";
 
-            })
-
-            agregarContenedor();
+            });
             
             });
 
+            agregarContenedor();
 
-        });
+            // });
 
         function agregarContenedor(){
             var contenLista = document.createElement("div");
@@ -70,8 +74,9 @@ window.addEventListener('load', function() {
             contenLista.classList.add("contenLista");
             contenLista.appendChild(contenedorAgregar);
             contenLista.appendChild(formulario);
-            contenLista.appendChild(imprimirTitulo);
-            contenedorAgregar.style.display = "block";
+            contenedorAgregar.style.display = "inline-block";
+            // formulario.appendChild(imprimirTitulo);
+            // formulario.appendChild(agregarTarjeta);
         }
      
     };

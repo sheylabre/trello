@@ -2,6 +2,7 @@ body{
 	background-color: #4BBF6B;
 	margin: 0px;
 	background-position: top;
+	white-space: nowrap;
 }
 
 #trello{
@@ -112,6 +113,7 @@ body{
 	border:none;
 	border-radius: 5px 5px;
 	display: block;
+	word-wrap: break-word;
 }
 
 .botonGuardarTxtArea{
