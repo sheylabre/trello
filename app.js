@@ -5,14 +5,21 @@ window.addEventListener('load', function() {
     var formulario = document.getElementById("formulario");
     var contenedorTitulo = document.getElementById("titulo");
     var botonguardar = document.getElementById("boton");
+    var botoneliminar = document.getElementById("botonEliminar");
 
     contenedorGreen.addEventListener("click", function(){
-        subcontenedor2();
+        subcontenedor2();   
     }); 
 
     botonguardar.addEventListener("click", function(){
         contenedor();
     });
+    
+    botoneliminar.addEventListener("click",function(){
+        formulario.remove();
+        contenedorGreen.style.display = "inline-block";
+    })
+
 
     function subcontenedor2(){
         contenedorGreen.style.display = "none";
