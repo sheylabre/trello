@@ -1,41 +1,40 @@
 window.addEventListener('load', function() {
     var contentGeneral = document.getElementById("contenedorGeneral");
-    var contenedorspan = document.getElementById ("contenedorspan"); 
-    var contenedorAgregar = document.getElementById("contenedorAgregar");
+    var subcontenedor = document.getElementById ("subcontenedor"); 
+    var contenedorGreen = document.getElementById("contenedorGreen");
     var formulario = document.getElementById("formulario");
     var contenedorTitulo = document.getElementById("titulo");
     var botonguardar = document.getElementById("boton");
 
-    contenedorAgregar.addEventListener("click", function(){
-        gg();
+    contenedorGreen.addEventListener("click", function(){
+        subcontenedor2();
     }); 
+
     botonguardar.addEventListener("click", function(){
         contenedor();
     });
 
-    function gg(){
-        contenedorAgregar.style.display = "none";
+    function subcontenedor2(){
+        contenedorGreen.style.display = "none";
         formulario.style.display = "inline-block";
         contenedorTitulo.focus();
     }
 
     function contenedor(){
-      //  contenedorGeneral.appendChild(contenedorspan);
-        // botonguardar.addEventListener("click", function(){
             formulario.style.display = "none";
 
             var imprimirTitulo = document.createElement("span");
-            contenedorAgregar.parentElement.appendChild(imprimirTitulo);
+            contenedorGreen.parentElement.appendChild(imprimirTitulo);
             imprimirTitulo.innerText = contenedorTitulo.value;
             imprimirTitulo.setAttribute("class","imprimirTitulo");
 
-            var agregarTarjeta = document.createElement("span");
-            agregarTarjeta.setAttribute("class","agregarTarjeta");
-            agregarTarjeta.innerText = "Añadir Tarjeta...";
-            contenedorAgregar.parentElement.appendChild(agregarTarjeta);
+            var aniadirTarjeta = document.createElement("span");
+            aniadirTarjeta.setAttribute("class","aniadirTarjeta");
+            aniadirTarjeta.innerText = "Añadir Tarjeta...";
+            contenedorGreen.parentElement.appendChild(aniadirTarjeta);
 
-            agregarTarjeta.addEventListener("click", function(){
-            agregarTarjeta.style.display = "none";
+            aniadirTarjeta.addEventListener("click", function(){
+            aniadirTarjeta.style.display = "none";
 
             var textArea = document.createElement("textarea"); 
             textArea.setAttribute("cols","33");   
@@ -44,7 +43,7 @@ window.addEventListener('load', function() {
             var contentxtArea = document.createElement("div");
             contentxtArea.classList.add("contentxtArea");
             contentxtArea.appendChild(textArea);
-            contenedorspan.insertBefore(contentxtArea, agregarTarjeta);
+            imprimirTitulo.parentElement.insertBefore(contentxtArea, imprimirTitulo.parentElement.children[1]);
 
             var botonGuardarTxtArea = document.createElement("button");
             botonGuardarTxtArea.classList.add("botonGuardarTxtArea");
@@ -56,9 +55,15 @@ window.addEventListener('load', function() {
             botonGuardarTxtArea.style.display = "none";
 
             var resultadoTextArea = document.createElement("span");
+            contentxtArea.insertBefore(resultadoTextArea, contentxtArea.children[0]); 
             contentxtArea.appendChild(resultadoTextArea);
             resultadoTextArea.innerText = textArea.value;
-            agregarTarjeta.style.display = "inline-block";
+            aniadirTarjeta.style.display = "inline-block";
+
+            var contenedorResultadoTextArea = document.createElement("div");
+            contenedorResultadoTextArea.appendChild(resultadoTextArea);
+            contentxtArea.appendChild(contenedorResultadoTextArea);
+            contenedorResultadoTextArea.classList.add("contenedorResultadoTextArea");
 
             });
             
@@ -72,11 +77,9 @@ window.addEventListener('load', function() {
             var contenLista = document.createElement("div");
             contenedorGeneral.appendChild(contenLista);
             contenLista.classList.add("contenLista");
-            contenLista.appendChild(contenedorAgregar);
+            contenLista.appendChild(contenedorGreen);
             contenLista.appendChild(formulario);
-            contenedorAgregar.style.display = "inline-block";
-            // formulario.appendChild(imprimirTitulo);
-            // formulario.appendChild(agregarTarjeta);
+            contenedorGreen.style.display = "inline-block";
         }
      
     };
