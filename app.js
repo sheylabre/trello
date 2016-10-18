@@ -55,8 +55,7 @@ window.addEventListener('load', function() {
             botonGuardarTxtArea.style.display = "none";
 
             var resultadoTextArea = document.createElement("span");
-            contentxtArea.insertBefore(resultadoTextArea, contentxtArea.children[0]); 
-            contentxtArea.appendChild(resultadoTextArea);
+           // contentxtArea.insertBefore(resultadoTextArea, contentxtArea.children[0]); 
             resultadoTextArea.innerText = textArea.value;
             aniadirTarjeta.style.display = "inline-block";
 
