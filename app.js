@@ -54,8 +54,7 @@ window.addEventListener('load', function() {
             textArea.style.display = "none";
             botonGuardarTxtArea.style.display = "none";
 
-            var resultadoTextArea = document.createElement("span");
-           // contentxtArea.insertBefore(resultadoTextArea, contentxtArea.children[0]); 
+            var resultadoTextArea = document.createElement("span"); 
             resultadoTextArea.innerText = textArea.value;
             aniadirTarjeta.style.display = "inline-block";
 
