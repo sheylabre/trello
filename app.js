@@ -49,12 +49,13 @@ window.addEventListener('load', function() {
             var contentxtArea = document.createElement("div");
             contentxtArea.classList.add("contentxtArea");
             contentxtArea.appendChild(textArea);
-            imprimirTitulo.parentElement.insertBefore(contentxtArea, imprimirTitulo.parentElement.children[1]);
+            imprimirTitulo.parentElement.insertBefore(contentxtArea, imprimirTitulo.children[1]);
+            imprimirTitulo.parentElement.insertBefore(aniadirTarjeta, imprimirTitulo.children[1]); 
             
             var botonGuardarTxtArea = document.createElement("button");
             botonGuardarTxtArea.classList.add("botonGuardarTxtArea");
             contentxtArea.appendChild(botonGuardarTxtArea);
-            botonGuardarTxtArea.innerText = "Enviar";
+            botonGuardarTxtArea.innerText = "Enviar";   
 
             botonGuardarTxtArea.addEventListener("click", function(){
             textArea.style.display = "none";
