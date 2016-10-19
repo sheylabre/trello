@@ -14,12 +14,11 @@ window.addEventListener('load', function() {
     botonguardar.addEventListener("click", function(){
         contenedor();
     });
-    
+     
     botoneliminar.addEventListener("click",function(){
-        formulario.remove();
+        formulario.style.display = "none";
         contenedorGreen.style.display = "inline-block";
-    })
-
+    });
 
     function subcontenedor2(){
         contenedorGreen.style.display = "none";
@@ -42,7 +41,7 @@ window.addEventListener('load', function() {
 
             aniadirTarjeta.addEventListener("click", function(){
             aniadirTarjeta.style.display = "none";
-
+            
             var textArea = document.createElement("textarea"); 
             textArea.setAttribute("cols","33");   
             textArea.setAttribute("class","textArea"); 
@@ -51,7 +50,7 @@ window.addEventListener('load', function() {
             contentxtArea.classList.add("contentxtArea");
             contentxtArea.appendChild(textArea);
             imprimirTitulo.parentElement.insertBefore(contentxtArea, imprimirTitulo.parentElement.children[1]);
-
+            
             var botonGuardarTxtArea = document.createElement("button");
             botonGuardarTxtArea.classList.add("botonGuardarTxtArea");
             contentxtArea.appendChild(botonGuardarTxtArea);
@@ -60,9 +59,16 @@ window.addEventListener('load', function() {
             botonGuardarTxtArea.addEventListener("click", function(){
             textArea.style.display = "none";
             botonGuardarTxtArea.style.display = "none";
-
+            
+            if (textArea.value.length == 0) {
+                alert("Amiga el textarea esta vacío");
+                textArea.style.display = "block";
+                botonGuardarTxtArea.style.display = "inline-block";
+                return false;
+            };
+           
             var resultadoTextArea = document.createElement("span");
-           // contentxtArea.insertBefore(resultadoTextArea, contentxtArea.children[0]); 
+            contentxtArea.insertBefore(resultadoTextArea, contentxtArea.children[0]); 
             resultadoTextArea.innerText = textArea.value;
             aniadirTarjeta.style.display = "inline-block";
 
@@ -77,8 +83,6 @@ window.addEventListener('load', function() {
 
             agregarContenedor();
 
-            // });
-
         function agregarContenedor(){
             var contenLista = document.createElement("div");
             contenedorGeneral.appendChild(contenLista);
@@ -90,3 +94,5 @@ window.addEventListener('load', function() {
      
     };
 });
+
+
